@@ -1,10 +1,9 @@
 from nltk.corpus import words
 
 
-def dictionary_by_length():
-    valid_words = words.words()
+def dictionary_by_length(word_list):
     words_by_length = {}
-    for word in valid_words:
+    for word in word_list:
         if len(word) in words_by_length:
             words_by_length[len(word)].append(word)
         else:
@@ -32,4 +31,4 @@ def anagram_solver(sorted_dictionary):
                 print("Invalid anagram")
 
 
-anagram_solver(dictionary_by_length())
+anagram_solver(dictionary_by_length(words.words()))
